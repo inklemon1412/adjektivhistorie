@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+        .adjDiv {
+            background-color: beige;
+           width: max-content;
+           border: 1px solid green;
+            font-size: xx-large;
+        }
+        .tellclass{
+            display: inline;
+        }
+
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        
+        .button {
+            background-color: aqua;
+            border: 3px solid black;
+            margin: 3px;
+            font-size: larger;
+            cursor: pointer;
+        }
+        </style>
+        </head>
+ 
+        <body>
+            <img src="dog.jpg">
+            <div id="app"></div>
+
+            <script>
+                let time = "___";
+                let being = "___";
+                let place = "___";
+                let fun = "___";
+
+                updateView()
+                function updateView(){
+                    document.getElementById('app').innerHTML = `
+    
+            <div id="adjDiv" class="adjDiv">
+            I går
+            <div id="timeDiv" class="tellclass">${time}</div>
+            gikk en
+            <div id="beingDiv" class="tellclass">${being}</div>
+            til
+            <div id="placeDiv" class="tellclass">${place}</div>
+            og var
+            <div id="funDiv" class="tellclass">${fun}</div>
+            </div>
+
+            <div>
+            <div id="time">
+            <button onclick="setTime(this)" class="button">kveld</button>
+            <button onclick="setTime(this)" class="button">ettermiddag</button>
+            </div>
+             
+            <div id="being">
+                <button onclick="setBeing(this)" class="button">person</button>
+                <button onclick="setBeing(this)" class="button">hund</button>
+                </div>
+             
+                <div id="place">
+                <button onclick="setPlace(this)" class="button">baren</button>
+                <button onclick="setPlace(this)" class="button">gymmen</button>
+                
+                </div>
+             
+                <div id="fun">
+                <button onclick="setFun(this)" class="button">fornøyd</button>
+                <button onclick="setFun(this)" class="button">miserabel</button>
+                
+                </div>
+                 `
+                }
+
+                function setTime(btn){
+                    time = btn.innerHTML;
+                    updateView();
+
+                }
+
+                function setBeing(btn){
+                    being = btn.innerHTML;
+                    updateView();
+
+                }
+                function setPlace(btn){
+                    place = btn.innerHTML;
+                    updateView();
+
+                }
+                function setFun(btn){
+                    fun = btn.innerHTML;
+                    updateView();
+
+                }
+                updateView();
+
+
+
+                </script>
+                </body>
+</html>
